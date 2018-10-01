@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Lista de objetos</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="listObject.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+           html{
+            background-color: rgb(0, 0, 0);
+            }
+            .interface{
+                background-image: url(trianglify.png);
+                background-color:#FAFAFA;
+                color: rgb(0, 0, 0);
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                overflow:hidden;
+                border-radius: 5px 5px 5px 5px;
+                box-sizing: border-box;
+                border-style: solid;
+                border-width: 2px;
+                border-color: rgb(255, 255, 255);
+                font-family: 'Roboto', sans-serif;
+                font-size: 15pt;
+            }
+            .row{
+                margin-left: auto;
+                margin-right: auto;
+                padding-bottom: 440px;
+            }
+            .col-sm-4-1{
+                color: rgb(0, 0, 0);
+                background-color:rgb(250, 250, 250);
+                text-align: justify;
+                border-top: solid 2px;
+                border-right: solid 1px;
+                border-right: 10px;
+                border-bottom: solid 2px;
+                box-sizing: border-box;
+                padding-left: 20px;
+                padding-bottom: 42px;
+                font-size: 11pt;
+            }
+            .botaoc{
+                background-color: #EEEEEE;
+                border: solid 1px;
+                border-radius: 5px 5px 5px 5px;
+                border-color: #9b9b9b;
+                color: rgb(0, 0, 0);
+                float: left;
+                display: grid;
+                margin: 5px;
+                padding: 5px;
+            }
+            .botaod{
+                background-color:  rgb(109, 108, 108);
+                border-color: #292828;
+                border: solid 1px;
+                border-radius: 5px 5px 5px 5px;
+                color: rgb(243, 243, 243);
+                float: left;
+                display: grid;
+                
+            }
+            .botaod:hover{
+                background-color: #9b9b9b;
+                transition: background 1s;
+            }  
+            .botaoc:hover{
+                background-color: #bdbdbd;
+                transition: background 1s;
+            }
+            .r{
+              padding-left: 150px;
+              color: rgb(0, 0, 0);
+              font-family: 'Roboto', sans-serif;
+            }
+        </style>        
+        <div class="interface">
+            <div class="row">
+                <p align="center"><h2 align="center"> Lista de Objetos - 10 Exercícios</h2> </p>
+                <p align="center">
+                    Profº Daniel
+                </p>
+                <p align="center">
+                    Aluno: Daniel Silva - 21146</br> Aluno: Mateus Borges Rodrigues - 21026
+                </p> 
+          
+                <div class="col-sm-4-1">
+                    <br>
+                    <p>
+                        <button onclick="hide2()" class="botaoc">Exercício 2</button>
+                    </p>
+                    <p>
+                        <button onclick="hide3()" class="botaoc">Exercício 3</button>
+                    </p>
+                    <p>
+                        <button onclick="hide4()" class="botaoc">Exercício 4</button>
+                    </p>
+                    <p>
+                        <button onclick="hide5()" class="botaoc">Exercício 5</button>
+                    </p>
+                    <p>
+                        <button onclick="hide6()" class="botaoc">Exercício 6</button>
+                    </p>
+                    <p>
+                        <button onclick="hide7()" class="botaoc">Exercício 7</button>
+                    </p>
+                    <p>
+                        <button onclick="hide8()" class="botaoc">Exercício 8</button>
+                    </p>
+                    <p>
+                        <button onclick="hide9()" class="botaoc">Exercício 9</button>
+                    </p>
+                    <p>
+                        <button onclick="hide11()" class="botaoc">Exercício 11</button>
+                    </p>
+                    <p>
+                        <button onclick="hide20()" class="botaoc">Exercício 20</button>
+                    </p>
+
+                    <div id="exerc2" style="display:none">
+                        <br>
+                        <br>
+                        <h2 align="center">Exercício 2</h2>
+                        <h4>Cadastro de habitantes </h4> 
+                        <p>
+                            Idade <input type="number" id="idade">
+                        </p>
+                        <p>
+                            Salário <input type="number" id="salario">
+                        </p>
+                        <p>
+                            Número de Filhos <input type="number" id="filhos">
+                        </p>
+                        <p>
+                            Sexo
+                            <select id="sexo">
+                                <option value="F"> Feminino</option>
+                                <option value="M"> Masculino</option>
+                            </select>
+                        </p>
+                        <p>
+                            RG <input type="number" id="rg">
+                        </p>
+                        <p>
+                            <button onclick="exerc02()" class="botaod"> Cadastrar</button>
+                        </p>
+                        <p id="r2" class="r">
+                        </p>
+                        <br>
+                        <hr>
+                        <h4> Cálculos </h4>
+                        <p>
+                        <button onclick="item1()" class="botaod"> Item 1</button>
+                        <p id="item1" class="r">
+                        </p>
+                        <br>
+                        <br>
+                        <button onclick="item2()" class="botaod"> Item 2</button>
+                        <p id="item2" class="r">
+                        </p>
+                        <br>
+                        <button onclick="item3()" class="botaod"> Item 3</button>
+                        <p id="item3" class="r">
+                        </p>
+                        <br>
+                        <button onclick="item4()" class="botaod"> Item 4</button>
+                        <p id="item4" class="r">
+                        </p>
+                        <br>
+                        <hr>
+                    </div>
+                    </p>
+                    <br>
+
+                   <div id="exerc3" style="display:none">
+                        <br>
+                        <br>
+                        <h2 align="center">Exercício 3</h2>
+                        <h4>Cadastro de habitantes </h4> 
+                        <p>
+                            Sexo <select id="sexo3">
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                            </select>
+                        </p>
+                        <p>
+                            Cor dos olhos <select id="olhos">
+                                <option value="A">Azul</option>
+                                <option value="V">Verde</option>
+                                <option value="C">Castanhos</option>
+                            </select>
+                            
+                        </p>
+                        <p>
+                            Digite a altura (em metros) <input type="number" id="altura3">
+                            
+                        </p>
+                        <p>
+                            Digite a idade <input type="number" id="idade3">
+                        </p>
+                        <p>
+                            <button onclick="cadastra()" class="botaod">Cadastro</button>
+                        </p>
+                        <br>
+                        <p id="aviso3">
+                        </p>
+                        <br>
+                        <br>
+                        <hr/>
+                        <br>
+                        <br>
+                        <h4>Cálculos</h4>
+                        <p>
+                            <button onclick="item1exerc3()" class="botaod">Item 1</button>
+                        </p>
+                        <p id="item1exerc3" class="r">
+                        </p>
+                        <br>
+                        <p>
+                            <button onclick="item2exerc3()" class="botaod">Item 2</button>
+                        </p>
+                        <p id="item2exerc3" class="r">
+                        </p>
+                        <br>
+                        <p>
+                            <button onclick="item3exerc3()" class="botaod">Item 3</button>
+                        </p>
+                        <p id="item3exerc3" class="r">
+                        </p>
+                        <br>
+                        <p>
+                            <button onclick="item4exerc3()" class="botaod">Item 4</button>
+                        </p>
+                        <p id="item4exerc3" class="r">
+                        </p>
+                    </div>
+                    <div id="exerc4" style="display:none">
+                        <br>
+                        <h2 align="center">Exercício 4</h2>
+                        <h4>Pesquisa Populacional</h4>    
+                        <p>
+                            Informe o sexo do habitante<select id="sexo4" onclick="document.getElementById('aviso10').innerHTMML = ''">
+                                <option value="F">Feminino</option>
+                                <option value="M">Masculino</option>
+                            </select>
+                        </p>
+                        <p>
+                            Informe o nome <input type="text" id="nome4">
+                        </p>
+                        <p> 
+                            Informe a idade do habitante <input type="number" id="idade4">
+                        </p>
+                        <p>
+                            Informe a renda familiar <input type="number" id="renda4"> 
+                        </p>
+                        <p>
+                            Informe o numero de filhos do habitante <input type="number" id="filhos4">
+                        </p>
+                        <p>
+                            <button onclick="cadastra4()" class="botaod">Cadastra Habitante</button>
+                        </p>
+                        <p>
+                            <button onclick="media4()" class="botaod">Media dos Salarios</button>
+                        </p>
+                        <p>
+                            <button onclick="maiorIdade4()" class="botaod">Maior idade</button>
+                        </p>
+                        <p>
+                            <button onclick="menorIdade4()" class="botaod">Menor idade</button>
+                        </p>
+                        <p>
+                            <button onclick="baixaRenda4()" class="botaod">Mulher/Renda</button>
+                        </p>
+                        <br>
+                        <p id="R4">
+                        </p>            
+                    </div>
+                        <br>
+                    <div id="exerc5" style="display:none">     
+                        <h2 align="center">Exercício 5</h2>
+                        <br>
+                        <h4> Área de cadastro</h4>
+                        <p>
+                            Código <input type="number" id="codigo5">
+                        </p>
+                        <p>
+                            Qtde <input type="number" id="qtde5">
+                        </p>
+                        <p>
+                            Descrição <input type="text" id="descricao5">
+                        </p>
+                        <p>
+                            Valor <input type="number" id="valor5">
+                        </p>
+                        <p>
+                            <button onclick="exerc05()" class="botaod">Inserir</button>
+                        <p>
+                        <br> 
+                        <p id="r5"></p>
+                        <br>
+                        <br>
+                        <button onclick="altera()" class="botaod"> Alterar </button>
+                        <br>
+                        <p id="altera5">  </p>
+                        <br>
+                        <br>
+                        <hr>
+                        <p> Digite a letra inicial  <input type="text" id="letra5" maxlength="1" size="1"></p> 
+                        <p>
+                            <button onclick="mostraLetra()" class="botaod" > Mostrar </button>
+                        </p>
+                        <br>
+                        <p id="mostraLetra5">  </p>
+                        <br>
+                        <p>
+                            <button onclick="estoque()" class="botaod" > Verificar estoque menor que 5 </button>
+                        </p>
+                        <br>
+                        <p id="mostraLetra"></p> 
+                    </div> 
+                    <div id="exerc6" style="display: none">
+                        <br>
+                        <h2 align="center">Exercício 6</h2>
+                        <br>
+                        <h4> Cadastro de clientes</h4>
+                        <br>
+                        <p> Digite o número do cliente <input type="text" id="nCliente"></p>
+                        <p> Digite o nome do cliente <input type="text" id="nomeCliente"></p>
+                        <p> Digite o telefone do cliente <input type="text" id="telCliente"></p>
+                        <p> Digite o endereço do cliente <input type="text" id="endCliente"></p>
+                    
+                        <p>
+                            <button onclick="cadastroCliente()" class="botaod" > Cadastrar </button>
+                        </p>
+                        <p id="aviso1"></p>
+                        <br>
+                        <hr>
+                        <h4> Cadastro de contas</h4>
+                        <br>
+                        <p> Digite o número do cliente <input type="text" id="numCliente"></p>
+                        <p> Digite o número da conta <input type="text" id="numConta"></p>
+                        <p> Digite o saldo <input type="text" id="saldo"></p>
+                        <p>
+                            <button onclick="cadastroConta()" class="botaod" > Cadastrar </button>
+                        </p>
+                        <p id="aviso2"></p>
+                        <br>
+                        <hr>
+                        <h4>Consulta</h4>
+                        <br>
+                        <p>
+                            <button onclick="consulta()" class="botaod" > Exibir contas </button>
+                        </p>
+                        <p id="contas"></p>
+                        <br>
+                    </div>
+                    <div id="exerc7" style="display: none">
+                        <br>
+                        <h2 align="center">Exercício 7</h2>
+                        <br>
+                        <h4>Cadastro de clientes</h4>
+                        <br>
+                        <p> Digite o código do cliente <input type="text" id="numCliente7"></p>
+                        <p> Digite o nome do cliente <input type="text" id="nomeCliente7"></p>
+                        <button onclick="cadastroCliente07()" class="botaod" > Cadastrar </button>
+                        <br>
+                        <p id="aviso4"></p>
+                        <hr>
+                        <h4>Cadastro de contas</h4>
+                        <br>
+                        <p> Digite o código do cliente <input type="text" id="codCliente7"></p>
+                        <p> Digite o número da conta <input type="text" id="numConta7"></p>
+                        <p> Digite o valor da compra <input type="text" id="valorCompra7"></p>   
+                        <button onclick="cadastroConta07()" class="botaod" > Cadastrar </button>
+                        <br>
+                        <p id="aviso5"></p>
+                        <hr>
+                        <br>
+                        <h4>Remoção de cliente</h4>
+                        <br>
+                        <p> Digite o código do cliente <input type="text" id="numCliente7"></p>
+                        <br>
+                        <button onclick="removerCliente07()" class="botaod" > Remover </button>
+                        <br>
+                        <p id="aviso6"></p>
+                    </div>
+                    <div id="exerc8" style="display:none">
+                        <br>
+                        <h2 align="center">Exercício 8</h2>
+                        <h4>Cadastro de informações</h4>
+                        <br>
+                        Estado <select id="estado">
+                            <option value="AC">AC - Acre</option>
+                            <option value="AM">AM - Amazonas</option>
+                            <option value="BA">BA - Bahia</option>
+                            <option value="CE">CE - Ceará</option>
+                            <option value="DF">DF - Distrito Federal</option>
+                            <option value="ES">ES - Espírito Santo</option>
+                            <option value="MA">MA - Maranhão</option>
+                            <option value="MS">MS - Mato Grosso do Sul</option>
+                            <option value="MG">MG - Minas Gerais</option>
+                            <option value="PA">PA - Pará</option>
+                            <option value="PR">PR - Paraná</option>
+                            <option value="RJ">RJ - Rio de Janeiro</option>
+                            <option value="SC">SC - Santa Catarina</option>
+                            <option value="SP">SP - São Paulo</option>
+                            <option value="TO">TO - Tocantins</option>
+                        </select>
+                        <p> Digite o número de veículos que circularam neste estado <input type="text" id="numVeiculos"></p>
+                        <p> Digite o número de acidentes neste estado <input type="text" id="numAcidentes"></p>
+                        <br>
+                        <button onclick="cadastroVeiculos()" class="botaod" > Inserir </button>
+                        <br>
+                        <p id="aviso7"></p>
+                        <hr>
+                        <h4>Cálculos</h4>
+                        <br>
+                        <br>
+                        <button onclick="exerc08_item1()" class="botaod" > Item 1 </button>
+                        <br>
+                        <p id="exerc08_item1"></p>
+                        <br>
+                        <button onclick="exerc08_item2()" class="botaod" > Item 2 </button>
+                        <br>
+                        <p id="exerc08_item2"></p>
+                        <br>
+                        <button onclick="exerc08_item3()" class="botaod" > Item 3 </button>
+                        <br>
+                        <p id="exerc08_item3"></p>
+                    </div>
+                    <div id="exerc9" style="display: none">
+                        <br>
+                        <h2 align="center">Exercício 9</h2>
+                        <h4>Cadastro de informações</h4>
+                        <br>
+                        <p> Digite o nome do funcionário <input type="text" id="nomeFunc"></p>
+                        <p> Digite o salário <input type="text" id="salario9"></p>
+                        <p> Digite a comissão <input type="text" id="comissao"></p>
+                        <p> Digite o total de vendas <input type="text" id="vendas"></p>
+                        <button onclick="exerc09()" class="botaod" > Cadastrar </button>
+                        <br>
+                        <p id="aviso8"></p>
+                        <br>
+                        <hr>
+                        <h4>Cálculos</h4>
+                        <br>
+                        <button onclick="calcula09()" class="botaod" > Calcular </button>
+                        <p id="r9"></p>
+                        <br>
+                    </div>
+                    <div id="exerc11" style="display: none">
+                        <br>
+                        <h2 align="center">Exercício 11</h2>
+                        <h3>Cadastro Clinica</h3>  
+                        <br>
+                        <h4>Cadastro Medico</h4>  
+                        <br>
+                        <p>
+                            Codigo do medico: <input type="number" id="codMedico">
+                        </p>
+                        <p> 
+                            Nome do medico: <input type="text" id="nomeMedico">
+                        </p>
+                        <p>
+                            Endereço do médico: <input type="text" id="enderecoMedico"> 
+                        </p>
+                        <p>
+                            Salario do medico: <input type="number" id="salMedico">
+                        </p>
+                        <p>
+                            <button onclick="cadastramed()" class="botaod">Cadastro Médico</button>
+                        </p>
+                        <p> 
+                            <button onclick="consultamed()" class="botaod"> Consulta o cadastro Medico </button>
+                        </p>
+                            <p id="resultado11"> 
+                        <br>
+                        <h4>Cadastro Paciente</h4>  
+                        <br>
+                        <p>
+                            Codigo do paciente: <input type="number" id="codPaciente">
+                        </p>
+                        <p> 
+                            Nome do paciente: <input type="text" id="nomePaciente">
+                        </p>
+                        <p>
+                            Endereço do paciente: <input type="text" id="enderecoPaciente"> 
+                        </p>
+                        <p>
+                            Idade do paciente: <input type="number" id="idadePaciente">
+                        </p>
+                        <p>
+                            <button onclick="cadastrapac()" class="botaod">Cadastro Paciente</button>
+                        </p>
+                        <br>
+                        <h4>Cadastro Consulta</h4>  
+                        <br>
+                        <p>
+                            Numero do Prontuario: <input type="number" id="numprontuario">
+                        </p>
+                        <p> 
+                            Data da Consulta: <input type="data" id="dataConsulta">
+                        </p>
+                        <p>
+                            Diagnostico da Consulta: <input type="text" id="diagConsulta"> 
+                        </p>
+                        <p>
+                            Codigo do medico: <input type="number" id="codMed">
+                        </p>
+                        <p>
+                            Codigo do paciente: <input type="number" id="codpac">
+                        </p>
+                        <p>
+                                Valor da conta em Reais: <input type="number" id="valor11">
+                        </p>
+                        <br>
+                        <p>
+                            <button onclick="cadastracons()" class="botaod">Cadastro da Consulta</button>
+                        </p>
+
+                        <br>
+                        <p id="r11">
+                        </p>
+                    </div>
+                    <div id="exerc20" style="display: none">
+                            <br>
+                            <h2 align="center">Exercício 20</h2>
+                            <h4>Oficina Unifacef</h4>
+                            <p>
+                                Insira o numero da ordem de serviço:<input type="number" id="os">
+                            </p>
+                            <p>
+                                Insira a data do serviço realizado:<input type="date" id="data">
+                            </p>
+                            <p>
+                                Insira o valor do serviço realizado:<input type="number" id="valor20">
+                            </p>
+                            <p>
+                                Descreva o serviço realizado:<input type="text" id="servico">
+                            </p>
+                            <p>
+                                Nome do cliente:<input type="text" id="nome20">
+                            </p>
+                            <p>
+                                <button onclick="cadastra20()" class="botaod">Cadastro da OS</button>
+                            </p>
+                            <p>
+                                <button onclick="media20()" class="botaod"> Media dos valores</button>
+                            </p>
+                            <p>
+                                <button onclick="caro()" class="botaod">Serviço/Caro</button>
+                            </p>
+                            <br>
+                            <p id="resposta"></p>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
